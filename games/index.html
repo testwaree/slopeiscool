@@ -5,108 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slope Game Versions Hub</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* General Reset and Body Styling */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
+
+        /* Header Styling */
         header {
-            background-color: #3f51b5;
+            background-color: #4caf50;
             color: white;
-            padding: 1rem 2rem;
             text-align: center;
+            padding: 2rem;
         }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.25rem;
+        }
+
+        /* Main Content Styling */
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
         }
+
+        /* Grid Layout for Game Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
+
+        /* Individual Game Card Styling */
         .card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            padding: 1.5rem;
+            text-decoration: none;
         }
+
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
-        .card img {
-            max-width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
+
         .card h3 {
+            font-size: 1.75rem;
+            color: #333;
             margin: 1rem 0;
         }
+
         .card a {
-            display: block;
-            margin: 1rem 0 1.5rem;
-            text-decoration: none;
-            color: #3f51b5;
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: #4caf50;
+            color: white;
             font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #388e3c;
+            transform: translateY(-2px);
+        }
+
+        .card a:active {
+            transform: translateY(0);
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .card h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Slope Game Versions Hub</h1>
-        <p>Explore all versions and spinoffs of the hit browser game, Slope!</p>
+        <h1>Slope Game Versions Hub</h1>
+        <p>Explore and play all the versions and spinoffs of the popular browser game Slope!</p>
     </header>
+    
     <div class="container">
         <div class="grid">
+            <!-- Game Card 1 - Slope 2015 -->
             <div class="card">
-                <img src="game1-thumbnail.jpg" alt="Game 1 Thumbnail">
                 <h3>Slope 2015 (Original Host)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/2015/index.html">Play Now</a>
             </div>
+            <!-- Game Card 2 - Slope 2016 -->
             <div class="card">
-                <img src="game2-thumbnail.jpg" alt="Game 2 Thumbnail">
                 <h3>Slope 2016 (Original Host)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/2016/index.html">Play Now</a>
             </div>
+            <!-- Game Card 3 - Slope Unblocked -->
             <div class="card">
-                <img src="game3-thumbnail.jpg" alt="Game 3 Thumbnail">
                 <h3>Slope Unblocked (Original Host)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/unblocked/index.html">Play Now</a>
             </div>
+            <!-- Game Card 4 - Slope Y8 -->
             <div class="card">
-                <img src="game4-thumbnail.jpg" alt="Game 4 Thumbnail">
                 <h3>Slope Y8 (Original Host)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/y8/index.html">Play Now</a>
             </div>
+            <!-- Game Card 5 - Slope Plus -->
             <div class="card">
-                <img src="game5-thumbnail.jpg" alt="Game 5 Thumbnail">
                 <h3>Slope Plus (Unofficial)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/plus/index.html">Play Now</a>
             </div>
+            <!-- Game Card 6 - Slope Online -->
             <div class="card">
-                <img src="game6-thumbnail.jpg" alt="Game 6 Thumbnail">
                 <h3>SlopeOnline (Unofficial)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/slopeonline/index.html">Play Now</a>
             </div>
+            <!-- Game Card 7 - Slope 2 -->
             <div class="card">
-                <img src="game7-thumbnail.jpg" alt="Game 7 Thumbnail">
                 <h3>Slope 2 (Unofficial)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/slope2/index.html">Play Now</a>
             </div>
+            <!-- Game Card 8 - Slope 3 Version 1 -->
             <div class="card">
-                <img src="game8-thumbnail.jpg" alt="Game 8 Thumbnail">
                 <h3>Slope 3 Version 1 (Unofficial)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/slope3v1/index.html">Play Now</a>
             </div>
+            <!-- Game Card 9 - Slope 3 -->
             <div class="card">
-                <img src="game9-thumbnail.jpg" alt="Game 9 Thumbnail">
                 <h3>Slope 3 (Unofficial)</h3>
                 <a href="https://testwaree.github.io/slopeiscool/games/slope3/index.html">Play Now</a>
             </div>
