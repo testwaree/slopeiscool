@@ -1,199 +1,195 @@
 /* General Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212; /* Dark background */
-  color: #fff;
-  line-height: 1.6;
-}
-
-#app {
-  display: flex;
-  height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #181818;
+    color: #f4f4f4;
+    display: flex;
 }
 
 /* Sidebar Styling */
 .sidebar {
-  width: 250px;
-  background-color: #1f1f1f;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    width: 250px;
+    background-color: #222;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.sidebar-header {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #4caf50;
+.sidebar h1 {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.sidebar-menu {
-  list-style: none;
+.sidebar nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+    display: block;
+    transition: all 0.3s ease;
 }
 
-.sidebar-menu li {
-  margin: 1.5rem 0;
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    color: #f4f4f4;
+    background-color: #333;
+    border-left: 4px solid #4caf50;
+    padding-left: 1rem;
 }
 
-.sidebar-menu a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #ccc;
-  font-size: 1.1rem;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 2rem;
 }
 
-.sidebar-menu a:hover,
-.sidebar-menu a.active {
-  background-color: #4caf50;
-  color: #fff;
+header {
+    margin-bottom: 2rem;
 }
 
-.sidebar-menu .icon {
-  margin-right: 10px;
-  font-size: 1.2rem;
+header h1 {
+    font-size: 2rem;
+    color: #4caf50;
 }
 
-/* Main Content Styling */
-.content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 2rem;
+header p {
+    font-size: 1.2rem;
+    color: #aaa;
 }
 
-.game-display {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #1f1f1f;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
-.game-info {
-  max-width: 60%;
-}
-
-.game-info h1 {
-  font-size: 2rem;
-  color: #4caf50;
-}
-
-.game-info p {
-  margin: 1rem 0;
-  color: #bbb;
-}
-
-.game-actions {
-  margin-top: 1.5rem;
-}
-
-.game-actions button {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  background-color: #4caf50;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.game-actions button:hover {
-  background-color: #388e3c;
-  transform: translateY(-3px);
-}
-
-.game-thumbnail img {
-  border-radius: 12px;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Other Versions Section */
-.game-versions {
-  margin-top: 2rem;
-}
-
-.game-versions h2 {
-  font-size: 1.8rem;
-  color: #4caf50;
-  margin-bottom: 1rem;
-}
-
-.versions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
+/* Game Card */
 .game-card {
-  background-color: #1f1f1f;
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  cursor: pointer;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .game-card img {
-  width: 128px;
-  height: 128px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border-radius: 12px;
+    width: 100%;
+    height: 128px;
+    object-fit: cover;
 }
 
-.game-card h3 {
-  font-size: 1.2rem;
-  color: #fff;
+.game-info {
+    padding: 1rem;
+    text-align: center;
 }
 
+.game-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.game-info p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+/* Game Actions */
+.game-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-actions button {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.game-actions button:hover {
+    background: #388e3c;
+}
+
+/* Favorite Icon */
 .favorite-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
-  color: #ccc;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #888;
+    transition: color 0.3s ease;
 }
 
-.favorite-icon:hover {
-  color: #ff9800; /* Highlighted star color */
+.favorite-icon.favorited {
+    color: #ffd700; /* Gold for favorited */
 }
 
-/* Scrollbar Styling */
-.content::-webkit-scrollbar {
-  width: 8px;
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.content::-webkit-scrollbar-thumb {
-  background-color: #4caf50;
-  border-radius: 8px;
+#loading-screen.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
-.content::-webkit-scrollbar-track {
-  background-color: #1f1f1f;
+.loading-content {
+    text-align: center;
+    color: #fff;
+}
+
+.loading-content h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #4caf50;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
