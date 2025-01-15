@@ -1,5 +1,5 @@
-# Slope Community Website
+# SlopeIsCool
 
-## Discord server: 
-https://discord.gg/9dbP8WX89R
+## The same thing as SlopeNexus, but better UI.
+Credits to chatgpt.
 
