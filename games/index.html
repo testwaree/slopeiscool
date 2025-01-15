@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slope Game Hub</title>
-  <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slope Game Versions Hub</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="app">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1>Launching Game...</h1>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
     <!-- Sidebar Navigation -->
-    <nav class="sidebar">
-      <div class="sidebar-header">
-        <h2>Slope Hub</h2>
-      </div>
-      <ul class="sidebar-menu">
-        <li><a href="#" class="active"><span class="icon">🏠</span> Home</a></li>
-        <li><a href="#"><span class="icon">📚</span> Library</a></li>
-        <li><a href="#"><span class="icon">⭐</span> Favorites</a></li>
-        <li><a href="#"><span class="icon">⚙️</span> Settings</a></li>
-        <li><a href="#"><span class="icon">❓</span> Help</a></li>
-      </ul>
-    </nav>
+    <aside class="sidebar">
+        <h1>Slope Hub</h1>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Favorites</a>
+            <a href="#">Settings</a>
+            <a href="#">Help</a>
+        </nav>
+    </aside>
 
     <!-- Main Content -->
-    <main class="content">
-      <!-- Game Display Section -->
-      <section class="game-display">
-        <div class="game-info">
-          <h1 id="game-title">Slope 2015</h1>
-          <p id="game-description">The original version of the legendary browser game Slope! Play the classic that started it all.</p>
-          <div class="game-actions">
-            <button id="play-game">Play Now</button>
-          </div>
-        </div>
-        <div class="game-thumbnail">
-          <img src="https://via.placeholder.com/128" alt="Slope 2015" id="game-thumbnail">
-        </div>
-      </section>
+    <main>
+        <header>
+            <h1>Slope Game Versions Hub</h1>
+            <p>Explore and play all the versions and spinoffs of the popular browser game Slope!</p>
+        </header>
+        
+        <div class="games-grid">
+            <!-- Game Card 1 -->
+            <div class="game-card">
+                <img src="placeholder.png" alt="Slope 2015">
+                <div class="game-info">
+                    <h3>Slope 2015 (Original Host)</h3>
+                    <p>Experience the first version of the classic slope game!</p>
+                    <div class="game-actions">
+                        <button data-link="https://testwaree.github.io/slopeiscool/games/2015/index.html">Play Now</button>
+                        <span class="favorite-icon">★</span>
+                    </div>
+                </div>
+            </div>
 
-      <!-- Other Versions Section -->
-      <section class="game-versions">
-        <h2>Other Versions</h2>
-        <div class="versions-grid">
-          <!-- Game Cards -->
-          <div class="game-card" data-version="2015">
-            <img src="https://via.placeholder.com/128" alt="Slope 2015">
-            <h3>Slope 2015</h3>
-            <span class="favorite-icon">⭐</span>
-          </div>
-          <div class="game-card" data-version="2016">
-            <img src="https://via.placeholder.com/128" alt="Slope 2016">
-            <h3>Slope 2016</h3>
-            <span class="favorite-icon">⭐</span>
-          </div>
-          <div class="game-card" data-version="unblocked">
-            <img src="https://via.placeholder.com/128" alt="Slope Unblocked">
-            <h3>Slope Unblocked</h3>
-            <span class="favorite-icon">⭐</span>
-          </div>
-          <!-- Add more game cards here -->
+            <!-- Game Card 2 -->
+            <div class="game-card">
+                <img src="placeholder.png" alt="Slope 2016">
+                <div class="game-info">
+                    <h3>Slope 2016 (Original Host)</h3>
+                    <p>The second iteration of the popular slope game.</p>
+                    <div class="game-actions">
+                        <button data-link="https://testwaree.github.io/slopeiscool/games/2016/index.html">Play Now</button>
+                        <span class="favorite-icon">★</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional game cards (repeat the structure) -->
+            <!-- Add other versions in the same format -->
         </div>
-      </section>
     </main>
-  </div>
 
-  <script src="script.js"></script> <!-- External JS -->
+    <script src="script.js"></script>
 </body>
 </html>
