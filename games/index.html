@@ -13,17 +13,17 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #121212;
+            color: white;
             line-height: 1.6;
         }
 
         /* Header Styling */
         header {
-            background-color: #4caf50;
+            background: linear-gradient(135deg, #4caf50, #388e3c);
             color: white;
-            text-align: center;
             padding: 2rem;
+            text-align: center;
         }
         header h1 {
             font-size: 3rem;
@@ -32,6 +32,26 @@
         }
         header p {
             font-size: 1.25rem;
+        }
+
+        /* Hero Banner */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: url('your-banner-image.jpg'); /* Replace with your custom banner */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .banner h2 {
+            font-size: 2.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
         }
 
         /* Main Content Styling */
@@ -48,116 +68,132 @@
             gap: 2rem;
         }
 
-        /* Individual Game Card Styling */
+        /* Game Card */
         .card {
-            background-color: #fff;
+            background-color: #1f1f1f;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             border: none;
-            padding: 1.5rem;
-            text-decoration: none;
+            padding: 1rem;
         }
-
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
         }
-
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
         .card h3 {
-            font-size: 1.75rem;
-            color: #333;
-            margin: 1rem 0;
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            color: #4caf50;
         }
 
-        .card a {
-            display: inline-block;
-            padding: 0.75rem 2rem;
+        /* Favorite Button */
+        .favorite {
+            background: none;
+            border: 1px solid #4caf50;
+            color: #4caf50;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .favorite.active {
             background-color: #4caf50;
             color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .card a:hover {
+        /* Launch Button */
+        .launch {
             background-color: #388e3c;
-            transform: translateY(-2px);
+            color: white;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .launch:hover {
+            background-color: #4caf50;
+            transform: scale(1.05);
         }
 
-        .card a:active {
-            transform: translateY(0);
+        /* Loading Screen */
+        #loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
         }
-
-        /* Media Query for Mobile Devices */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            .card h3 {
-                font-size: 1.5rem;
-            }
+        #loading h1 {
+            font-size: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Slopeiscool</h1>
-        <p>CREDITS TO JACKSON HE MADE ALL OF THIS FRFRFRFR!</p>
+        <h1>Slope Game Versions Hub</h1>
+        <p>Explore and play all the versions and spinoffs of the popular browser game Slope!</p>
     </header>
+
+    <div class="banner">
+        <h2>Welcome to the Slope Universe</h2>
+    </div>
     
     <div class="container">
         <div class="grid">
-            <!-- Game Card 1 - Slope 2015 -->
+            <!-- Game Card 1 -->
             <div class="card">
-                <h3>Slope 2015 (Original Host)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/2015/index.html">Play Now</a>
+                <img src="2015-thumbnail.jpg" alt="Slope 2015">
+                <h3>Slope 2015</h3>
+                <button class="favorite" onclick="toggleFavorite(this)">Favorite</button>
+                <button class="launch" onclick="launchGame('2015')">Launch</button>
             </div>
-            <!-- Game Card 2 - Slope 2016 -->
+            <!-- Game Card 2 -->
             <div class="card">
-                <h3>Slope 2016 (Original Host)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/2016/index.html">Play Now</a>
+                <img src="2016-thumbnail.jpg" alt="Slope 2016">
+                <h3>Slope 2016</h3>
+                <button class="favorite" onclick="toggleFavorite(this)">Favorite</button>
+                <button class="launch" onclick="launchGame('2016')">Launch</button>
             </div>
-            <!-- Game Card 3 - Slope Unblocked -->
-            <div class="card">
-                <h3>Slope Unblocked (Original Host)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/unblocked/index.html">Play Now</a>
-            </div>
-            <!-- Game Card 4 - Slope Y8 -->
-            <div class="card">
-                <h3>Slope Y8 (Original Host)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/y8/index.html">Play Now</a>
-            </div>
-            <!-- Game Card 5 - Slope Plus -->
-            <div class="card">
-                <h3>Slope Plus (Unofficial)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/plus/index.html">Play Now</a>
-            </div>
-            <!-- Game Card 6 - Slope Online -->
-            <div class="card">
-                <h3>SlopeOnline (Unofficial)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/slopeonline/index.html">Play Now</a>
-            </div>
-            <!-- Game Card 7 - Slope 2 -->
-            <div class="card">
-                <h3>Slope 2 (Unofficial)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/slope2/index.html">Play Now</a>
-            </div>
-            <!-- Game Card 8 - Slope 3 Version 1 -->
-            <div class="card">
-                <h3>Slope 3 Version 1 (Unofficial)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/slope3v1/index.html">Play Now</a>
-            </div>
-            <!-- Game Card 9 - Slope 3 -->
-            <div class="card">
-                <h3>Slope 3 (Unofficial)</h3>
-                <a href="https://testwaree.github.io/slopeiscool/games/slope3/index.html">Play Now</a>
-            </div>
+            <!-- Add more game cards as needed -->
         </div>
     </div>
+
+    <!-- Loading Screen -->
+    <div id="loading">
+        <h1>Launching Game...</h1>
+    </div>
+
+    <script>
+        function toggleFavorite(button) {
+            button.classList.toggle('active');
+            button.textContent = button.classList.contains('active') ? 'Favorited' : 'Favorite';
+        }
+
+        function launchGame(version) {
+            const loadingScreen = document.getElementById('loading');
+            loadingScreen.style.display = 'flex';
+            setTimeout(() => {
+                window.location.href = `https://testwaree.github.io/slopeiscool/games/${version}/index.html`;
+            }, 1500); // Simulate a delay for sleek effect
+        }
+    </script>
 </body>
 </html>
